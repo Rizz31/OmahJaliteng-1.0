@@ -226,6 +226,6 @@ export const seo = {
   description:
     "Jaliteng: wedangan dan kuliner malam di Semarang. Tahu Petis Semarang, Wedang Ronde autentik, buka setiap hari 09.00-22.00.",
   ogImage: "./assets/hero-poster.jpg",
-  siteUrl: (import.meta.env.VITE_SITE_URL as string) || "https://jaliteng.vercel.app",
+  siteUrl: (import.meta.env.VITE_SITE_URL as string) || "https://rizz31.github.io/jaliteng",
   locale: "id_ID",
 };
