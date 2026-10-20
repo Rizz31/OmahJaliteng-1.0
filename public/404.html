@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jaliteng — Tahu Petis &amp; Wedang Ronde Khas Semarang</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      // Keeps paths like /qr working when refreshed or opened directly
+      var path = window.location.pathname;
+      var repo = path.split('/')[1] || '';
+      var sub = path.split('/').slice(2).join('/');
+      
+      // If path includes /qr, redirect to base URL with hash or search
+      if (path.includes('qr')) {
+        window.location.replace(window.location.origin + '/' + (repo ? repo + '/' : '') + '#/qr');
+      } else {
+        window.location.replace(window.location.origin + '/' + (repo ? repo + '/' : ''));
+      }
+    </script>
+  </head>
+  <body>
+    <p>Mengalihkan ke beranda Jaliteng...</p>
+  </body>
+</html>

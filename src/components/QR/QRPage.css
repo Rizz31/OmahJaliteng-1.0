@@ -1,0 +1,201 @@
+.qr-page-container {
+  min-height: 100vh;
+  background: var(--parchment-dk);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-controls {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.qr-sticker-sheet {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+}
+
+.qr-sticker-card {
+  width: 380px;
+  background: var(--parchment);
+  border: 4px solid var(--teak);
+  border-radius: var(--r-lg);
+  padding: var(--space-6);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.qr-sticker-card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed var(--toast-gold);
+  border-radius: calc(var(--r-lg) - 4px);
+  pointer-events: none;
+}
+
+.sticker-badge {
+  display: inline-block;
+  background: var(--terracotta);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  margin-bottom: var(--space-2);
+}
+
+.sticker-brand {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--teak-dk);
+  letter-spacing: 0.05em;
+  margin: 0;
+  line-height: 1;
+}
+
+.sticker-tagline {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.sticker-qr-wrap {
+  position: relative;
+  display: inline-block;
+  margin: var(--space-4) 0;
+  padding: 12px;
+  background: #fff;
+  border-radius: var(--r-md);
+  border: 2px solid var(--border-dk);
+  box-shadow: var(--shadow-sm);
+}
+
+.sticker-qr-img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.sticker-mascot-badge {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 64px;
+  height: 64px;
+  background: var(--parchment);
+  border: 2px solid var(--teak);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.sticker-mascot-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.sticker-instructions {
+  margin-bottom: var(--space-4);
+}
+
+.scan-callout {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--teak-dk);
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.scan-desc {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.sticker-table-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding: 6px 12px;
+  background: rgba(91,58,33,0.06);
+  border-radius: var(--r-sm);
+}
+
+.table-label {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--teak-dk);
+}
+
+.table-box {
+  width: 60px;
+  height: 30px;
+  border: 2px dashed var(--teak);
+  background: #fff;
+  border-radius: var(--r-sm);
+}
+
+.sticker-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-2);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Packaging Variant differences */
+.packaging-variant .sticker-badge {
+  background: var(--toast-gold);
+  color: var(--ink);
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .qr-page-container {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  .qr-sticker-sheet {
+    gap: 20px;
+  }
+  .qr-sticker-card {
+    box-shadow: none !important;
+    border: 3px solid #000 !important;
+    page-break-inside: avoid;
+  }
+}

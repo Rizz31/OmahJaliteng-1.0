@@ -1,0 +1,223 @@
+/* ── CTA Section ─────────────────────────────────────────────── */
+.cta-section {
+  position: relative;
+  padding: 120px 0 160px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cta-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.4) saturate(0.6);
+  opacity: 0.55;
+}
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(35,24,21,0.7) 0%, rgba(91,58,33,0.8) 100%);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  color: var(--parchment);
+  margin-bottom: var(--space-4);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.cta-subtext {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(241,230,208,0.8);
+  margin-bottom: var(--space-8);
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-12);
+}
+
+.cta-btn-primary {
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+}
+.cta-btn-secondary {
+  font-size: 0.9rem;
+}
+
+/* ── Enamel sign ─────────────────────────────────────────────── */
+.cta-enamel-sign {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--ribbon-red);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--r-md);
+  border: 4px solid #fff;
+  outline: 4px solid var(--ribbon-dk);
+  box-shadow: var(--shadow-lg), inset 0 2px 0 rgba(255,255,255,0.2);
+  position: relative;
+}
+
+.enamel-sign-text {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.enamel-sign-sub {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ── Mascot (peeks from bottom) ──────────────────────────────── */
+.cta-mascot-wrap {
+  position: absolute;
+  bottom: 60px;
+  right: 5%;
+  z-index: 3;
+  width: clamp(120px, 15vw, 220px);
+  pointer-events: none;
+}
+.cta-mascot { width: 100%; }
+
+/* ── Torn edge ───────────────────────────────────────────────── */
+.cta-torn {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C80,15 160,45 240,25 C320,5 400,40 480,22 C560,4 640,42 720,25 C800,8 880,42 960,27 C1040,12 1120,40 1200,22 C1280,5 1360,38 1440,18 L1440,0 L0,0Z' fill='%23E4D4B4'/%3E%3C/svg%3E");
+  background-size: cover;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--teak-dk);
+  color: var(--parchment);
+  padding: var(--space-12) 0 var(--space-8);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.footer-brand {
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--toast-gold);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(241,230,208,0.6);
+  font-style: italic;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.footer-links nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.footer-links nav a {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: rgba(241,230,208,0.7);
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+.footer-links nav a:hover { color: var(--toast-gold); }
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: rgba(241,230,208,0.65);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid rgba(241,230,208,0.15);
+  border-radius: var(--r-full);
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+}
+.social-link:hover {
+  color: var(--parchment);
+  border-color: rgba(241,230,208,0.35);
+  background: rgba(255,255,255,0.05);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(241,230,208,0.1);
+  padding-top: var(--space-6);
+  text-align: center;
+}
+
+.footer-copy {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: rgba(241,230,208,0.35);
+  line-height: 1.6;
+  max-width: none;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cta-mascot-wrap { width: 100px; bottom: 40px; right: 2%; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .cta-btn-primary, .cta-btn-secondary { width: 100%; justify-content: center; max-width: 300px; }
+}

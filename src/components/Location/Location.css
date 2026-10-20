@@ -1,0 +1,212 @@
+.location-section {
+  position: relative;
+  padding: var(--space-16) 0 var(--space-24);
+  background: var(--parchment-dk);
+}
+
+.location-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(91,58,33,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(181,83,47,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ── Map card ─────────────────────────────────────────────── */
+.location-map-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.location-map-preview {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.map-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.2) saturate(0.8);
+  transition: transform var(--dur-slow) var(--ease-out), filter var(--dur-slow);
+}
+
+.location-map-card:hover .map-preview-img {
+  transform: scale(1.03);
+  filter: sepia(0.1) saturate(0.9);
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(35,24,21,0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.map-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.location-address {
+  padding: var(--space-4) var(--space-6);
+}
+
+.location-address-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--teak-dk);
+  margin-bottom: var(--space-2);
+}
+
+.location-address-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* ── Info column ─────────────────────────────────────────────── */
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── Hours ───────────────────────────────────────────────────── */
+.location-hours-card {}
+
+.location-hours-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--teak-dk);
+  margin-bottom: var(--space-3);
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.hours-table tr:last-child {
+  border-bottom: none;
+}
+
+.hours-today {
+  background: rgba(181,83,47,0.08);
+  border-radius: var(--r-sm);
+}
+
+.hours-day {
+  padding: 6px 8px 6px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+  width: 80px;
+}
+
+.hours-today .hours-day {
+  color: var(--teak-dk);
+  font-weight: 700;
+}
+
+.hours-time {
+  padding: 6px 8px;
+  color: var(--text-secondary);
+}
+
+.hours-today .hours-time {
+  color: var(--teak-dk);
+  font-weight: 600;
+}
+
+.hours-today-label {
+  padding: 6px 0 6px 8px;
+  color: var(--terracotta);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Contacts ────────────────────────────────────────────────── */
+.location-contacts-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--teak-dk);
+  margin-bottom: var(--space-4);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.contact-btn {
+  font-size: 0.85rem;
+}
+
+.contact-badge {
+  font-size: 0.62rem;
+  background: rgba(198,40,40,0.15);
+  color: var(--ribbon-red);
+  padding: 2px 6px;
+  border-radius: var(--r-full);
+  margin-left: 4px;
+}
+
+.contact-number {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.contact-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.contact-phone-link {
+  color: var(--teak-dk);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+.contact-phone-link:hover { color: var(--terracotta); }
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-buttons { flex-direction: column; }
+  .contact-btn { width: 100%; justify-content: center; }
+}
