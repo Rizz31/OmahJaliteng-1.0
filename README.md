@@ -84,6 +84,32 @@ npm run build
 npm run preview
 ```
 
+### Deploy ke GitHub Pages (Domain Publik Gratis dari GitHub):
+
+Website ini sudah disiapkan 100% untuk **GitHub Pages** (termasuk relative base path, file `.nojekyll`, `404.html` SPA redirect, dan GitHub Actions workflow).
+
+Domain publik Anda nantinya akan berbentuk:
+👉 `https://<username-github>.github.io/<nama-repo>/`
+
+**Langkah Deploy Otomatis (GitHub Actions):**
+1. Buat repository baru di [GitHub](https://github.com/new) (pastikan diset **Public**).
+2. Hubungkan & push kode dari folder `jaliteng`:
+   ```bash
+   git remote add origin https://github.com/<USERNAME>/<NAMA_REPO>.git
+   git push -u origin main
+   ```
+3. Di repository GitHub Anda, buka **Settings** > **Pages**.
+4. Pada bagian **Source**, pilih **GitHub Actions**.
+5. Tunggu 1 menit, website akan otomatis terdeploy & live dengan domain publik!
+
+**Opsi Deploy Cepat dari Terminal (via gh-pages):**
+```bash
+npm run deploy
+```
+Lalu di GitHub **Settings** > **Pages**, pilih Source: **Deploy from a branch** > branch `gh-pages` > `root` > **Save**.
+
+---
+
 ### Deploy Gratis ke Cloudflare Pages / Vercel / Netlify:
 1. Upload folder proyek ke GitHub repository Anda.
 2. Buka [Vercel](https://vercel.com) atau [Cloudflare Pages](https://pages.cloudflare.com).
